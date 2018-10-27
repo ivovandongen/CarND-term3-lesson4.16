@@ -10,9 +10,5 @@ float inefficiency_cost(int target_speed, int intended_lane, int final_lane, vec
     /*
     Cost becomes higher for trajectories with intended lane and final lane that have traffic slower than target_speed.
     */
-
-    //TODO: Replace cost = 0 with an appropriate cost function.
-    float cost = 0;
-
-    return cost;
+    return (2.f * target_speed - lane_speeds[intended_lane] - lane_speeds[final_lane]) / float(target_speed);
 }
